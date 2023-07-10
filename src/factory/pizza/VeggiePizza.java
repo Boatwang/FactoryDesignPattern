@@ -1,5 +1,7 @@
 package factory.pizza;
 
+import factory.ingredient.factory.PizzaIngredientFactory;
+
 /**
  * @ClassName VeggiePizza
  * @Description
@@ -7,6 +9,12 @@ package factory.pizza;
  * @Date 2023/6/29 14:26
  **/
 public class VeggiePizza extends Pizza {
+
+    PizzaIngredientFactory ingredientFactory;
+
+    public VeggiePizza(PizzaIngredientFactory ingredientFactory){
+        this.ingredientFactory = ingredientFactory;
+    }
 
     @Override
     public void prepare() {
