@@ -1,5 +1,10 @@
 package factory.pizza;
 
+import factory.ingredient.Cheese;
+import factory.ingredient.Clams;
+import factory.ingredient.Dough;
+import factory.ingredient.factory.ChicagoPizzaIngredientFactory;
+
 /**
  * @ClassName ChicagoStyleCheesePizza
  * @Description
@@ -8,12 +13,24 @@ package factory.pizza;
  **/
 public class ChicagoStyleCheesePizza extends Pizza{
 
-    public ChicagoStyleCheesePizza(){
-        name = "Chicago Style Deep Dish Cheese Pizza";
-        dough = "Extra Thick Crust Dough";
-        sauce = "Plum Tomato Sauce";
+    private Cheese cheese;
+    private Dough dough;
+    private Clams clams;
 
-        toppings.add("Shredded Mozzarella Cheese");
+    public ChicagoStyleCheesePizza(){
+
+
+    }
+
+    @Override
+    public void prepare() {
+        ChicagoPizzaIngredientFactory ingredientFactory =
+                new ChicagoPizzaIngredientFactory();
+
+        this.cheese = ingredientFactory.createCheese();
+        this.dough = ingredientFactory.createDough();
+        this.clams = ingredientFactory.createClams();
+
     }
 
     public void cut() {

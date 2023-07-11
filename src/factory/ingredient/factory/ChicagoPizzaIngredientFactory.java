@@ -3,41 +3,39 @@ package factory.ingredient.factory;
 import factory.ingredient.*;
 
 /**
- * @ClassName NYPizzaIngredientFactory
+ * @ClassName ChicagoPizzaIngredientFactory
  * @Description
  * @Author 王春然
- * @Date 2023/7/10 15:17
+ * @Date 2023/7/11 9:13
  **/
-public class NYPizzaIngredientFactory implements PizzaIngredientFactory{
-
+public class ChicagoPizzaIngredientFactory implements PizzaIngredientFactory {
     @Override
     public Dough createDough() {
-        return new NYStyleDough();
+        return new ChicagoStyle();
     }
 
     @Override
     public Sauce createSauce() {
-        return new NYStyleSauce();
+        return new ChicagoStyleSauce();
     }
 
     @Override
     public Cheese createCheese() {
-        return new NYStyleCheese();
+        return new ChicagoStyleCheese();
     }
 
     @Override
     public Veggies[] createVeggies() {
-        Veggies veggies[] = {new Garlic(), new Onion(), new Mushroom(), new RedPepper()};
         return new Veggies[0];
     }
 
     @Override
     public Pepperoni createPepperoni() {
-        return new NYStylePepperoni();
+        return new ChicagoStylePepperoni();
     }
 
     @Override
     public Clams createClams() {
-        return new NYStyleClams();
+        return new ChicagoStyleClams();
     }
 }

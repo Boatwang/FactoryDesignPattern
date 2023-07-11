@@ -1,6 +1,8 @@
 package factory.store;
 
 import factory.PizzaStore;
+import factory.ingredient.factory.ChicagoPizzaIngredientFactory;
+import factory.ingredient.factory.PizzaIngredientFactory;
 import factory.pizza.*;
 
 /**
@@ -13,6 +15,10 @@ public class ChicagoStylePizzaStore extends PizzaStore {
 
     @Override
     public Pizza createPizza(String type) {
+
+        PizzaIngredientFactory ingredientFactory =
+                new ChicagoPizzaIngredientFactory();
+
         Pizza pizza = null;
         if (type.equals("cheese")){
             pizza = new ChicagoStyleCheesePizza();

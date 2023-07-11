@@ -15,7 +15,7 @@ public interface PizzaIngredientFactory {
     Cheese createCheese();
     Veggies[] createVeggies();
     Pepperoni createPepperoni();
-    Clams createClam();
+    Clams createClams();
 
 
 }
